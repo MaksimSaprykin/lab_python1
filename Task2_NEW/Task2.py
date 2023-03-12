@@ -2,6 +2,7 @@
 # Task 2
 # Saprykin Maksym
 # zachet_number = 16
+# ------------------------------------------------------#
 
 course_name = '\'Multi paradigm programming language\''
 task_number = 'Task 2'
