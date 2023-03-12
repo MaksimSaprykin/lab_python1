@@ -2,6 +2,7 @@
 # Task 3
 # Saprykin Maksym
 # zachet_number = 16
+# ---------------------------------------------------------#
 
 from math import *
 
