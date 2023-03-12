@@ -24,11 +24,9 @@ print('1. Solve an example:')
 print(formula, '= ?')
 
 # input data
-print('input x: and press Enter', '\n'
-      'input y: and press Enter', '\n'
-      'input z: and press Enter', '\n')
-x = float(input())
-y = float(input())
-z = float(input())
+
+x = float(input('input x:'))
+y = float(input('input x:'))
+z = float(input('input x:'))
 
 print(formula, '=', func())
