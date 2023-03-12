@@ -21,8 +21,8 @@ def func ():
     return f
 
 # Description Tasks
-print('1. Solve an example:')
-print(formula, '= ?')
+print('1. Example:')
+print('y = ', formula)
 
 # input data
 
