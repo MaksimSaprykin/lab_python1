@@ -47,6 +47,4 @@ for i in f_range(a, b+step_x, step_x):
     if head_min_func > min_func :
         head_min_func = min_func
 
-    print(i, min_func, head_min_func)
-
 print('На відрізку [', a, ', ', b, ']', 'функція ', formula, 'приймає min значення', head_min_func)
