@@ -8,6 +8,7 @@ task_number = 'Task 2'
 first_name_student = 'Maksym'
 last_name = 'Saprykin'
 zachet_number = '16'
+
 formula = 'x - (x + y/z)/(78 + y)'
 
 print(course_name + ': ' + task_number)
