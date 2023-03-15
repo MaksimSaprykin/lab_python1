@@ -6,7 +6,7 @@
 from math import *
 
 COURSE_NAME = '\'Multi paradigm programming language\''
-TASK_NUMBER = 'Task 4'
+TASK_NUMBER = 'Task 3'
 STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 
 FORMULA = '(x + 2 * x + 3) / (z - 2) + atan(z)'
