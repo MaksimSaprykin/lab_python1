@@ -5,33 +5,32 @@
 
 from math import *
 
-course_name = '\'Multi paradigm programming language\''
-task_number = 'Task 3'
-first_name_student = 'Maksym'
-last_name = 'Saprykin'
-zachet_number = '16'
-formula = '(x + 2 * x + 3) / (z - 2) + atan(z)'
+COURSE_NAME = '\'Multi paradigm programming language\''
+TASK_NUMBER = 'Task 4'
+STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 
-print(course_name + ': ' + task_number)
-print(first_name_student + ' ' + last_name + ', ' + zachet_number, '\n')
+FORMULA = '(x + 2 * x + 3) / (z - 2) + atan(z)'
+
+print(f'{COURSE_NAME}:{TASK_NUMBER}')
+print(STUDENT, '\n')
+
 
 # ishodna formula
-def func ():
-    f = eval(formula)
-    return f
+def calculation_expression(x, z):
+    return eval(f'({x}+2*{x}+3)/({z}-2)+atan({z})')
 
 # Description Tasks
 print('1. Example:')
-print('y = ', formula)
+print('y = ', FORMULA)
 
 # input data
 
 while True:
     z = float(input('input z:'))
-    if z == 2:
-        print('Not input z = 2, divide by 0 cannot be')
-    else:
+    if z != 2:
         break
+    print('Not input z = 2, divide by 0 cannot be')
+
 x = float(input('input x:'))
 
-print('y = ', formula, '=', func())
+print('y = ', FORMULA, '=', calculation_expression(x, z))
