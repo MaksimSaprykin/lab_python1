@@ -5,17 +5,17 @@
 
 from math import *  # Знайти рішення як амінити на 'import math as m'
 
-# но тоді доведеться перед мат.функ. дописувати m.sin
+                    # но тоді доведеться перед мат.функ. дописувати m.sin
 
 COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 4'
-STUDENT = {'first_name':'Maksym', 'last_name': 'Saprykin', 'zachet_number':'№16'}
+STUDENT = {'first_name': 'Maksym', 'last_name': 'Saprykin', 'zachet_number': '№16'}
 STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 FORMULA = 'sin(x) * x'
 step_x = 0.001
 
 print(f'{COURSE_NAME}:{TASK_NUMBER}')
-print(STUDENT,'\n')
+print(STUDENT, '\n')
 
 
 # ishodna formula
