@@ -6,16 +6,14 @@
 
 # from math import *
 
-course_name = '\'Introduction to programming\''
-task_number = 'Task 1'
-first_name_student = 'Maksym'
-last_name = 'Saprykin'
-zachet_number = '16'
+COURSE_NAME = '\'Multi paradigm programming language\''
+TASK_NUMBER = 'Task 4'
+STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 first_name_teacher = 'Vladislav'
 export_formula = '7.8-(1+2.1/3)/(78+21.3)'
 
-print(course_name + ': ' + task_number)
-print(first_name_student + ' ' + last_name + ', ' + zachet_number)
+print(f'{COURSE_NAME}:{TASK_NUMBER}')
+print(STUDENT, '\n')
 
 i = 1
 while i < 45:
