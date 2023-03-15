@@ -3,16 +3,15 @@
 # Saprykin Maksym
 # zachet_number = 16
 
-course_name = '\'Multi paradigm programming language\''
-task_number = 'Task 2'
-first_name_student = 'Maksym'
-last_name = 'Saprykin'
-zachet_number = '16'
+COURSE_NAME = '\'Multi paradigm programming language\''
+TASK_NUMBER = 'Task 2'
+STUDENT = {'first_name': 'Maksym', 'last_name': 'Saprykin', 'zachet_number': '№16'}
+STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 
 formula = 'x - (x + y/z)/(78 + y)'
 
-print(course_name + ': ' + task_number)
-print(first_name_student + ' ' + last_name + ', ' + zachet_number, '\n')
+print(f'{COURSE_NAME}:{TASK_NUMBER}')
+print(STUDENT, '\n')
 
 # ishodna formula
 
