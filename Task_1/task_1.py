@@ -20,4 +20,4 @@ str = [first_name_teacher for i in range(45)]
 print(','.join(str))
 
 val1 = eval(export_formula)
-print(export_formula, '= ' , val1)
+print(export_formula, '= ', val1)
