@@ -18,6 +18,4 @@ print(', '.join(STUDENT), '\n')
 str = [first_name_teacher for _ in range(45)]
 
 print(','.join(str))
-
-val1 = eval(export_formula)
-print(export_formula, '= ', val1)
+print(export_formula, '= ', eval(export_formula))
