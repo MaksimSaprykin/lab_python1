@@ -13,9 +13,9 @@ first_name_teacher = 'Vladislav'
 export_formula = '7.8-(1+2.1/3)/(78+21.3)'
 
 print(f'{COURSE_NAME}:{TASK_NUMBER}')
-print(STUDENT, '\n')
+print(', '.join(STUDENT), '\n')
 
-str = [first_name_teacher for i in range(45)]
+str = [first_name_teacher for _ in range(45)]
 
 print(','.join(str))
 
