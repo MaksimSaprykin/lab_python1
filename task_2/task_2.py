@@ -26,15 +26,15 @@ def description_task(formula):
 def inp_data():
     while True:
         try:
-            x = float(input(f'{t_input.template}: x = '))
-            y = float(input(f'{t_input.template}: y = '))
-            z = float(input(f'{t_input.template}: z = '))
+            x_i = float(input(f'{t_input.template}: x = '))
+            y_i = float(input(f'{t_input.template}: y = '))
+            z_i = float(input(f'{t_input.template}: z = '))
         except ValueError:
             print('Enter not number')
             continue
         else:
             try:
-                print_rezult(calculation_expression(x, y, z))
+                print_rezult(calculation_expression(x_i, y_i, z_i))
             except ZeroDivisionError:
                 print('Input incorrect, divide by 0 cannot be')
                 continue
