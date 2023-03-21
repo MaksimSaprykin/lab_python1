@@ -1,25 +1,19 @@
-
 """ Multi paradigm programming language
     Task 2
     Saprykin Maksym
     zachet_number = 16
 """
-from ast import literal_eval
+from string import Template
 
 COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 2'
 STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
+t_input = Template('input ')
 
 
 def print_info():
     print(f'{COURSE_NAME}:{TASK_NUMBER}')
     print(STUDENT, '\n')
-
-
-def func(formula):
-    #f_rezult = literal_eval(formula, {'x': x, 'y': y, 'z': z})
-
-    return literal_eval(formula)
 
 
 # Description Tasks
@@ -28,16 +22,34 @@ def description_task(formula):
     print(formula, '= ?')
 
 
-def print_rezult(formula):
-    print(F, '=', func(formula))
+# input data
+def inp_data():
+    while True:
+        try:
+            x = float(input(f'{t_input.template}: x = '))
+            y = float(input(f'{t_input.template}: y = '))
+            z = float(input(f'{t_input.template}: z = '))
+        except ValueError:
+            print('Enter not number')
+            continue
+        else:
+            try:
+                print_rezult(calculation_expression(x, y, z))
+            except ZeroDivisionError:
+                print('Input incorrect, divide by 0 cannot be')
+                continue
+            break
+
+
+def calculation_expression(x, y, z):
+    return x - (x + y / z) / (78 + y)
+
+
+def print_rezult(rezultat):
+    print(F, '=', rezultat)
 
 
 if __name__ == '__main__':
     F = 'x - (x + y/z)/(78 + y)'
     description_task(F)
-    x = float(input('input x:'))
-    y = float(input('input x:'))
-    z = float(input('input x:'))
-    #print_rezult(F)
-    c = literal_eval('3+5+67+89')
-    print(c)
+    inp_data()
