@@ -41,8 +41,8 @@ def inp_data():
             break
 
 
-def calculation_expression(x1, y, z):
-    return x1 - (x1 + y / z) / (78 + y)
+def calculation_expression(var_x, var_y, var_z):
+    return var_x - (var_x + var_y / var_z) / (78 + var_y)
 
 
 def print_rezult(rezultat):
