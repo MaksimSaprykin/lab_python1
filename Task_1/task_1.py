@@ -4,7 +4,6 @@
 # zachet_number = 16
 # ==============================================================#
 
-# from math import *
 
 COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 4'
