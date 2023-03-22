@@ -10,6 +10,7 @@ COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 3'
 STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 t_input = Template('input ')
+TEMPLATE = 'input {} = '
 
 
 def print_info():
@@ -29,21 +30,24 @@ def calculation_expression(var_x, var_z):
 
 
 # input data
-def inp_data():
+def inp_validate(values):
     while True:
         try:
-            x_i = float(input(f'{t_input.template}: x = '))
-            z_i = float(input(f'{t_input.template}: z = '))
+            return float(input(TEMPLATE.format(values)))
         except ValueError:
             print('Enter not number')
-            continue
-        else:
-            try:
-                print_rezult(calculation_expression(x_i, z_i))
-            except ZeroDivisionError:
-                print('Input incorrect, divide by 0 cannot be')
-                continue
-            break
+
+
+# input data
+def inp_data():
+    x_i = inp_validate('x')
+    z_i = inp_validate('z')
+    while True:
+        try:
+            return print_rezult(calculation_expression(x_i, z_i))
+        except ZeroDivisionError:
+            print('Input incorrect, divide by 0 cannot be')
+            z_i = inp_validate('z')
 
 
 def print_rezult(rezultat):
