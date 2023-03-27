@@ -34,17 +34,6 @@ def inp_data():
         z_i = inp_validate('z')
     return ut.print_rezult(F, calculation_expression(x_i, z_i))
 
-#    while True:
-#        try:
-#            return print_rezult(calculation_expression(x_i, z_i))
-#        except ZeroDivisionError:
-#            print('Input incorrect, divide by 0 cannot be')
-#            z_i = inp_validate('z')
-
-
-#def print_rezult(rezultat):
-#    print(F, '=', rezultat)
-
 
 if __name__ == '__main__':
     F = '(x + 2 * x + 3) / (z - 2) + ctag(z)'
