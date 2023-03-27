@@ -3,16 +3,10 @@
     Saprykin Maksym
     zachet_number = 16
 """
+import utils as ut
 
-COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 2'
-STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 TEMPLATE = 'Input {}'
-
-
-def print_info():
-    print(f'{COURSE_NAME}:{TASK_NUMBER}')
-    print(STUDENT, '\n')
 
 
 # Description Tasks
@@ -52,5 +46,6 @@ def print_rezult(rezultat):
 
 if __name__ == '__main__':
     F = 'x - (x + y/z)/(78 + y)'
+    ut.print_info(TASK_NUMBER)
     description_task(F)
     inp_data()
