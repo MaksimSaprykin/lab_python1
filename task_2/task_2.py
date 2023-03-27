@@ -28,12 +28,12 @@ def inp_data():
     x_i = inp_validate('x')
     y_i = inp_validate('y')
     z_i = inp_validate('z')
-    while y_i == -78 or z_i == y_i:
+    while y_i == -78 or z_i == 0:
         if y_i == -78:
             print('Input incorrect, y_i NOT = -78')
             y_i = inp_validate('y')
-        if z_i == y_i:
-            print('Input incorrect, z != y')
+        if z_i == 0:
+            print('Input incorrect, z != 0')
             z_i = inp_validate('z')
     return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
 
