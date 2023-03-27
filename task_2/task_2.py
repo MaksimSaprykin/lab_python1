@@ -10,7 +10,7 @@ TEMPLATE = 'Input {}'
 
 
 # Description Tasks
-#def description_task(formula):
+# def description_task(formula):
 #    print('1. Solve an example:')
 #    print(formula, '= ?')
 
@@ -35,7 +35,9 @@ def inp_data():
         if z_i == y_i:
             print('Input incorrect, z != y')
             z_i = inp_validate('z')
-    return ut.print_rezult(calculation_expression(x_i, y_i, z_i))
+    return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
+
+
 #    while True:
 #        try:
 #            return print_rezult(calculation_expression(x_i, y_i, z_i))
@@ -48,7 +50,7 @@ def calculation_expression(var_x, var_y, var_z):
     return var_x - (var_x + var_y / var_z) / (78 + var_y)
 
 
-#def print_rezult(rezultat):
+# def print_rezult(rezultat):
 #    print(F, '=', rezultat)
 
 
