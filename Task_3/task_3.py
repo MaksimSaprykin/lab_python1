@@ -5,17 +5,10 @@
 """
 from string import Template
 import math as m
+import utils as ut
 
-COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 3'
-STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
-t_input = Template('input ')
 TEMPLATE = 'input {} = '
-
-
-def print_info():
-    print(f'{COURSE_NAME}:{TASK_NUMBER}')
-    print(STUDENT, '\n')
 
 
 # Description Tasks
@@ -56,6 +49,6 @@ def print_rezult(rezultat):
 
 if __name__ == '__main__':
     F = '(x + 2 * x + 3) / (z - 2) + ctag(z)'
-    print_info()
+    ut.print_info(TASK_NUMBER)
     description_task(F)
     inp_data()
