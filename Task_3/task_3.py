@@ -3,7 +3,6 @@
     Saprykin Maksym
     zachet_number = 16
 """
-from string import Template
 import math as m
 import utils as ut
 
