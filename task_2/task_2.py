@@ -9,13 +9,8 @@ TASK_NUMBER = 'Task 2'
 TEMPLATE = 'Input {}'
 
 
-# Description Tasks
-# def description_task(formula):
-#    print('1. Solve an example:')
-#    print(formula, '= ?')
-
-
-def inp_validate(values):
+# number check
+def inp_variable(values):
     while True:
         try:
             return float(input(TEMPLATE.format(values)))
@@ -23,35 +18,26 @@ def inp_validate(values):
             print('Enter not number')
 
 
+# check for invalid known numbers
+def validate_inp(variable_name, variable_val, incorect_value):
+    while variable_val == incorect_value:
+        print(f'Input incorrect, {variable_name} != {incorect_value}')
+        variable_val = inp_variable(variable_name)
+    return variable_val
+
+
 # input data
 def inp_data():
-    x_i = inp_validate('x')
-    y_i = inp_validate('y')
-    z_i = inp_validate('z')
-    while y_i == -78 or z_i == 0:
-        if y_i == -78:
-            print('Input incorrect, y_i NOT = -78')
-            y_i = inp_validate('y')
-        if z_i == 0:
-            print('Input incorrect, z != 0')
-            z_i = inp_validate('z')
+    x_i = inp_variable('x')
+    y_i = inp_variable('y')
+    y_i = validate_inp('y', y_i, -78)
+    z_i = inp_variable('z')
+    z_i = validate_inp('z', z_i, 0)
     return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
-
-
-#    while True:
-#        try:
-#            return print_rezult(calculation_expression(x_i, y_i, z_i))
-#        except ZeroDivisionError:
-#            print('Input incorrect, divide by 0 cannot be')
-#            z_i = inp_validate('z')
 
 
 def calculation_expression(var_x, var_y, var_z):
     return var_x - (var_x + var_y / var_z) / (78 + var_y)
-
-
-# def print_rezult(rezultat):
-#    print(F, '=', rezultat)
 
 
 if __name__ == '__main__':
