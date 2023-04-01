@@ -7,11 +7,20 @@ def print_info(tusk_number):
     print(STUDENT, '\n')
 
 
+def print_rezult(formula_str, rezultat):
+    print(formula_str, '=', rezultat)
+
+
 # Description Tasks
 def description_task(formula):
     print('1. Solve an example:')
     print(formula, '= ?')
 
 
-def print_rezult(formula_str, rezultat):
-    print(formula_str, '=', rezultat)
+# number check
+def inp_variable(values, templete_t):
+    while True:
+        try:
+            return float(input(templete_t.format(values)))
+        except ValueError:
+            print('Enter not number')
