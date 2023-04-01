@@ -3,29 +3,17 @@
 # Saprykin Maksym
 # zachet_number = 16
 
-from math import *  # Знайти рішення як амінити на 'import math as m'
+import math as m
+import utils as ut
 
-                    # но тоді доведеться перед мат.функ. дописувати m.sin
-
-COURSE_NAME = '\'Multi paradigm programming language\''
 TASK_NUMBER = 'Task 4'
-STUDENT = {'first_name': 'Maksym', 'last_name': 'Saprykin', 'zachet_number': '№16'}
-STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 FORMULA = 'sin(x) * x'
-step_x = 0.001
-
-print(f'{COURSE_NAME}:{TASK_NUMBER}')
-print(STUDENT, '\n')
+STEP_X = 0.001
 
 
 # ishodna formula
 def calculation_expression(x):
-    return eval(f'sin({x})*{x}')
-
-
-# Description Tasks
-print('1. Example:')
-print('y = ', FORMULA)
+    return m.sin(x) * x
 
 # input data
 
@@ -40,6 +28,11 @@ def f_range(start, stop, step):  # range() на пряму не працює з 
         i += step
 
 
-min_func = min([calculation_expression(x) for x in f_range(a, b + step_x, step_x)])
+min_func = min([calculation_expression(x) for x in f_range(a, b + STEP_X, STEP_X)])
 
 print('На відрізку [', a, ', ', b, ']', 'функція ', FORMULA, 'приймає min значення', min_func)
+
+if __name__ == '__main__':
+    ut.print_info()
+    ut.description_task()
+
