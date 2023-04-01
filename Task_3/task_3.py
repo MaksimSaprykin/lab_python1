@@ -7,6 +7,7 @@ from string import Template
 import math as m
 import utils as ut
 
+
 TASK_NUMBER = 'Task 3'
 TEMPLATE = 'input {} = '
 
@@ -17,18 +18,19 @@ def calculation_expression(var_x, var_z):
 
 
 # input data
-def inp_validate(values):
-    while True:
-        try:
-            return float(input(TEMPLATE.format(values)))
-        except ValueError:
-            print('Enter not number')
+#def inp_validate(values):
+#    while True:
+#        try:
+#            return float(input(TEMPLATE.format(values)))
+#        except ValueError:
+#            print('Enter not number')
 
 
 # input data
 def inp_data():
-    x_i = inp_validate('x')
-    z_i = inp_validate('z')
+    x_i = ut.inp_validate('x', TEMPLATE)
+    z_i = ut.inp_validate('z', TEMPLATE)
+
     while z_i == 2:
         print('Input incorrect, divide by 0 cannot be')
         z_i = inp_validate('z')
