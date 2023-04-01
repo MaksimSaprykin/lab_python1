@@ -12,19 +12,17 @@ STEP_X = 0.001
 TEMPLATE_A = 'enter the beginning of the segment  [a, b], a ='
 TEMPLATE_B = 'enter the end of the segment   [a, b], B ='
 
+
 # ishodna formula
 def calculation_expression(x):
     return m.sin(x) * x
+
 
 # input data
 def inp_data():
     a = ut.inp_variable('a', TEMPLATE_A)
     b = ut.inp_variable('b', TEMPLATE_B)
-    #y_i = validate_inp('y', y_i, -78)
     return a, b
-    #return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
-#a = float(input('enter the beginning of the segment  [a, b], a ='))
-#b = float(input('enter the end of the segment   [a, b], B ='))
 
 
 def f_range(start, stop, step):  # range() на пряму не працює з float, то обходимо наступним чином,
@@ -34,11 +32,12 @@ def f_range(start, stop, step):  # range() на пряму не працює з 
         i += step
 
 
-min_func = min([calculation_expression(x) for x in f_range(a, b + STEP_X, STEP_X)])
+def min_func_expression(a, b):
+    return min([calculation_expression(x) for x in f_range(a, b + STEP_X, STEP_X)])
 
-print('На відрізку [', a, ', ', b, ']', 'функція ', FORMULA, 'приймає min значення', min_func)
 
 if __name__ == '__main__':
-    ut.print_info()
-    ut.description_task()
-
+    ut.print_info(TASK_NUMBER)
+    ut.description_task(FORMULA)
+    a_b = inp_data()
+    print(f'On the segment {a_b}, function {FORMULA} takes the min value = {min_func_expression(a_b[0], a_b[1])}')
