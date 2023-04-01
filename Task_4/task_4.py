@@ -9,16 +9,22 @@ import utils as ut
 TASK_NUMBER = 'Task 4'
 FORMULA = 'sin(x) * x'
 STEP_X = 0.001
-
+TEMPLATE_A = 'enter the beginning of the segment  [a, b], a ='
+TEMPLATE_B = 'enter the end of the segment   [a, b], B ='
 
 # ishodna formula
 def calculation_expression(x):
     return m.sin(x) * x
 
 # input data
-
-a = float(input('enter the beginning of the segment  [a, b], a ='))
-b = float(input('enter the end of the segment   [a, b], B ='))
+def inp_data():
+    a = ut.inp_variable('a', TEMPLATE_A)
+    b = ut.inp_variable('b', TEMPLATE_B)
+    #y_i = validate_inp('y', y_i, -78)
+    return a, b
+    #return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
+#a = float(input('enter the beginning of the segment  [a, b], a ='))
+#b = float(input('enter the end of the segment   [a, b], B ='))
 
 
 def f_range(start, stop, step):  # range() на пряму не працює з float, то обходимо наступним чином,
