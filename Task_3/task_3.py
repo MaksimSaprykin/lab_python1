@@ -7,7 +7,6 @@ from string import Template
 import math as m
 import utils as ut
 
-
 TASK_NUMBER = 'Task 3'
 TEMPLATE = 'input {} = '
 
@@ -17,23 +16,19 @@ def calculation_expression(var_x, var_z):
     return (var_x + 2 * var_x + 3) / (var_z - 2) + m.atan(var_z)
 
 
-# input data
-#def inp_validate(values):
-#    while True:
-#        try:
-#            return float(input(TEMPLATE.format(values)))
-#        except ValueError:
-#            print('Enter not number')
+# check for invalid known numbers
+def validate_inp(variable_name, variable_val, incorect_value):
+    while variable_val == incorect_value:
+        print(f'Input incorrect, {variable_name} != {incorect_value}')
+        variable_val = ut.inp_variable(variable_name, TEMPLATE)
+    return variable_val
 
 
 # input data
 def inp_data():
-    x_i = ut.inp_validate('x', TEMPLATE)
-    z_i = ut.inp_validate('z', TEMPLATE)
-
-    while z_i == 2:
-        print('Input incorrect, divide by 0 cannot be')
-        z_i = inp_validate('z')
+    x_i = ut.inp_variable('x', TEMPLATE)
+    z_i = ut.inp_variable('z', TEMPLATE)
+    z_i = validate_inp('z', z_i, 2)
     return ut.print_rezult(F, calculation_expression(x_i, z_i))
 
 
