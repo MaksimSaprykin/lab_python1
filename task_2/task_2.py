@@ -6,32 +6,23 @@
 import utils as ut
 
 TASK_NUMBER = 'Task 2'
-TEMPLATE = 'Input {}'
-
-
-# number check
-def inp_variable(values):
-    while True:
-        try:
-            return float(input(TEMPLATE.format(values)))
-        except ValueError:
-            print('Enter not number')
+TEMPLATE = 'Input {} = '
 
 
 # check for invalid known numbers
 def validate_inp(variable_name, variable_val, incorect_value):
     while variable_val == incorect_value:
         print(f'Input incorrect, {variable_name} != {incorect_value}')
-        variable_val = inp_variable(variable_name)
+        variable_val = ut.inp_variable(variable_name, TEMPLATE)
     return variable_val
 
 
 # input data
 def inp_data():
-    x_i = inp_variable('x')
-    y_i = inp_variable('y')
+    x_i = ut.inp_variable('x', TEMPLATE)
+    y_i = ut.inp_variable('y', TEMPLATE)
     y_i = validate_inp('y', y_i, -78)
-    z_i = inp_variable('z')
+    z_i = ut.inp_variable('z', TEMPLATE)
     z_i = validate_inp('z', z_i, 0)
     return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
 
