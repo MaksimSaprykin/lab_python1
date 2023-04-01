@@ -24,5 +24,3 @@ def inp_variable(values, templete_t):
             return float(input(templete_t.format(values)))
         except ValueError:
             print('Enter not number')
-
-
