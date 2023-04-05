@@ -10,20 +10,19 @@ TEMPLATE = 'Input {} = '
 
 
 # check for invalid known numbers
-def validate_inp(variable_name, variable_val, incorect_value):
-    while variable_val == incorect_value:
-        print(f'Input incorrect, {variable_name} != {incorect_value}')
+def validate_inp(variable_name, incorect_value):
+    while True:
         variable_val = ut.inp_variable(variable_name, TEMPLATE)
-    return variable_val
+        if variable_val != incorect_value:
+            return variable_val
+        print(f'Input incorrect, {variable_name} != {incorect_value}')
 
 
 # input data
 def inp_data():
     x_i = ut.inp_variable('x', TEMPLATE)
-    y_i = ut.inp_variable('y', TEMPLATE)
-    y_i = validate_inp('y', y_i, -78)
-    z_i = ut.inp_variable('z', TEMPLATE)
-    z_i = validate_inp('z', z_i, 0)
+    y_i = validate_inp('y', -78)
+    z_i = validate_inp('z', 0)
     return ut.print_rezult(F, calculation_expression(x_i, y_i, z_i))
 
 
