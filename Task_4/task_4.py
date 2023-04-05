@@ -24,12 +24,11 @@ def f_range(start, stop, step):  # range() на пряму не працює з 
 
 
 def min_func_expression(a_begin, b_end):
-    temp_b = a_begin
+    temp_b = b_end
     if a_begin > b_end:
         b_end = a_begin
         a_begin = temp_b
-    return min([m.sin(x) * x for x in np.arange(a_begin, b_end + STEP_X, STEP_X)])
-    #return min(m.sin(x) * x for x in f_range(a_begin, b_end + STEP_X, STEP_X))
+    return min(m.sin(x) * x for x in np.arange(a_begin, b_end + STEP_X, STEP_X))
 
 
 if __name__ == '__main__':
