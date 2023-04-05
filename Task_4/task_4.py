@@ -12,8 +12,8 @@ import utils as ut
 TASK_NUMBER = 'Task 4'
 FORMULA = 'sin(x) * x'
 STEP_X = 0.001
-TEMPLATE_A = 'enter the beginning of the segment  [a_begin, b_end], A ='
-TEMPLATE_B = 'enter the end of the segment   [a_begin, b_end], B ='
+TEMPLATE_A = 'enter the beginning of the segment  [A, B], A ='
+TEMPLATE_B = 'enter the end of the segment   [A, B], B ='
 
 
 def f_range(start, stop, step):  # range() на пряму не працює з float, то обходимо наступним чином,
@@ -29,6 +29,7 @@ def min_func_expression(a_begin, b_end):
         b_end = a_begin
         a_begin = temp_b
     return min([m.sin(x) * x for x in np.arange(a_begin, b_end + STEP_X, STEP_X)])
+    #return min(m.sin(x) * x for x in f_range(a_begin, b_end + STEP_X, STEP_X))
 
 
 if __name__ == '__main__':
