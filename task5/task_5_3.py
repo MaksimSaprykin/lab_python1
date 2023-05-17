@@ -9,20 +9,19 @@ import utils as ut
 def validate_number(variable_name):
     while True:
         try:
-            number = ut.inp_variable(variable_name, 'Enter a positive number: ')
-            if number >= 0:
-                return number
-            else:
-                print('The number must be positive.')
+            number_0 = ut.inp_variable(variable_name, 'Enter a positive number: ')
+            if number_0 >= 0:
+                return number_0
+            print('The number must be positive.')
         except ValueError:
             print("Incorrect input. The number should be >= 0")
 
 
-def heron_square_root(n):
-    guess = n / 2  # Початкове наближення
+def heron_square_root(n_var):
+    guess = n_var / 2  # Початкове наближення
     epsilon = 1e-4  # Точність
-    while abs(guess * guess - n) > epsilon:
-        guess = (guess + n / guess) / 2  # Обчислення наступного наближення
+    while abs(guess * guess - n_var) > epsilon:
+        guess = (guess + n_var / guess) / 2  # Обчислення наступного наближення
     return guess
 
 
