@@ -25,7 +25,7 @@ def heron_square_root(n_var):
     return guess
 
 
-# Приклад використання:
+
 if __name__ == '__main__':
     TASK_NUMBER = 'Task 5.3'
     TEMPLATE = 'Input {} '
