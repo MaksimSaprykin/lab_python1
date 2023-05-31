@@ -25,7 +25,6 @@ def heron_square_root(n_var):
     return guess
 
 
-
 if __name__ == '__main__':
     TASK_NUMBER = 'Task 5.3'
     TEMPLATE = 'Input {} '
