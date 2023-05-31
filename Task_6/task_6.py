@@ -101,7 +101,7 @@ def task_6_6(file_name):
 
 
 def task_6_7(url_book_t, formatted_book, formatted_old_book_t):
-    text_book = requests.get(url_book_t).text
+    text_book = requests.get(url_book_t, timeout=10).text
     with open(formatted_old_book_t, 'w', encoding='utf-8') as file:
         file.write(text_book)
     format_text = text_book.replace('\n', ' ')
@@ -110,7 +110,7 @@ def task_6_7(url_book_t, formatted_book, formatted_old_book_t):
 
 
 def task_6_8(url_book_t, new_file):
-    text_book = requests.get(url_book_t).text
+    text_book = requests.get(url_book_t, timeout=10).text
     chapter_find = r'CHAPTER [IVXLCDM]+\b.*'
     chapters = re.findall(chapter_find, text_book)
     with open(new_file, 'w', encoding='utf-8') as file:
@@ -120,7 +120,7 @@ def task_6_8(url_book_t, new_file):
 
 
 def task_6_9(url_book_t):
-    text_book = requests.get(url_book_t).text
+    text_book = requests.get(url_book_t, timeout=10).text
     big_char_count: int = 0
     small_char_count: int = 0
     for char in text_book:

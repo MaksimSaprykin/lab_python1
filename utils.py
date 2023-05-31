@@ -40,8 +40,8 @@ def create_txt_and_path(address_t):
     numbers = [random.randint(-50, 50) for _ in range(10)]
     path_new = Path(address_t)
     path_new.parent.mkdir(parents=True, exist_ok=True)
-    with path_new.open(mode="w") as file_task:
-        for n in numbers:
-            file_task.write(str(n) + "\n")
+    with path_new.open(mode='w', encoding='utf-8') as file_task:
+        for n_var in numbers:
+            file_task.write(str(n_var) + "\n")
 
     print('The file was successfully created at:', address_t)
