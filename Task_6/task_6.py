@@ -198,5 +198,5 @@ if __name__ == '__main__':
     # task_6_9(url_book2)
     db_name = 'imdb.db'
     data_file = 'imdb.csv'
-    task_6_10(db_name, data_file)
+    #task_6_10(db_name, data_file)
 
