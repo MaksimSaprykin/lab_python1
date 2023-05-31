@@ -1,3 +1,6 @@
+from pathlib import Path
+import random
+
 COURSE_NAME = '\'Multi paradigm programming language\''
 STUDENT = {'Maksym', 'Saprykin', 'zachet_number - 16'}
 
@@ -25,9 +28,6 @@ def inp_variable(values, templete_t):
         except ValueError:
             print('Enter not number')
 
-
-from pathlib import Path
-import random
 
 def create_txt_and_path(address_t):
     # Створюємо об'єкт шляху за вказаною адресою
