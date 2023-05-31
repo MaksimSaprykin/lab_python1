@@ -137,7 +137,7 @@ def task_6_9(url_book):
     print(f'The small char to text : {smal_char_percent:^6.2f}%')
 
 
-def task_6_10(db_name, data_file):
+def task_6_10(db_name, data_file): #
     def created_bd(db_name):
         conn = sqlite3.connect(db_name)
         curs = conn.cursor()
