@@ -34,7 +34,7 @@ def task_6_1():
     with path_save.open(mode='w', encoding='utf-8') as file_save:
         file_save.write(str(sum_numbers))
 
-    print("Sum write to file : sum_numbers.txt.")
+    print('Sum write to file : sum_numbers.txt.')
 
 
 def task_6_2():
