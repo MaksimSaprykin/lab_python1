@@ -25,8 +25,8 @@ def task_6_1():
     sum_numbers: int = 0
 
     with path_read.open(mode='r', encoding='utf-8') as file_read:
-        for _ in file_read:
-            number = int(_.strip())
+        for char in file_read:
+            number = int(char.strip())
             sum_numbers += number
 
     print('Sum numbers:', sum_numbers)
