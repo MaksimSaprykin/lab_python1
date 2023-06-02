@@ -1,7 +1,5 @@
-import csv
 import re
 from pathlib import Path
-import sqlite3
 import requests
 
 import utils as ut
@@ -135,47 +133,6 @@ def task_6_9(url_book_t):
     print(f'The small char to text : {smal_char_percent:^6.2f}%')
 
 
-def task_6_10(db_name_t, data_file_t):  #
-    def created_bd(db_created_name):
-        conn = sqlite3.connect(db_created_name)
-        curs = conn.cursor()
-        curs.execute('''CREATE TABLE ratings
-                                    (id INTEGER PRIMARY KEY, title VARCHAR(20), year INT, 
-                                    rating FLOAT)''')
-        conn.commit()
-        curs.close()
-        conn.close()
-
-    def import_data(data_file_import):
-        conn = sqlite3.connect(db_name_t)
-        curs = conn.cursor()
-        data_path = Path(data_file_import)
-
-        if data_path.is_file():
-            print(f'The file {data_file_import} already exists.')
-            with open(data_file_import, 'r', encoding='utf-8') as file:
-                reader = csv.reader(file)
-                next(reader)  # Пропускаємо перший рядок (заголовки стовпців)
-                for row in reader:
-                    curs.execute('INSERT INTO ratings (title, year, rating) VALUES (?, ?, ?)', row)
-        else:
-            print(f'The data file {data_file_import} does not exist.')
-
-        conn.commit()
-        curs.close()
-        conn.close()
-
-    db_path = Path(DB_NAME)
-
-    if db_path.is_file():
-        print(f'The file {DB_NAME} already exists.')
-    else:
-        print(f'The file {DB_NAME} has been created.')
-        created_bd(DB_NAME)
-
-    import_data(data_file_t)
-
-
 if __name__ == '__main__':
     # task_6_1()
     # task_6_2()
@@ -195,6 +152,3 @@ if __name__ == '__main__':
     # task_6_8(URL_BOOK1, FILE_NAME_CHAPTERS)
     URL_BOOK2 = 'https://www.gutenberg.org/files/1184/1184-0.txt'
     # task_6_9(URL_BOOK2)
-    DB_NAME = 'imdb.db'
-    DATA_FILES = 'imdb.csv'
-    # task_6_10(DB_NAME, DATA_FILES)
