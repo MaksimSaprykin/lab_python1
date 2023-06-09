@@ -60,9 +60,9 @@ import utils as ut
 #     with pytest.raises(expected_rezult):
 #         heron_square_root(input_number)
 
-@pytest.mark.parametrize("number", [0, 1, 10, 100, 0.5])
+@pytest.mark.parametrize('number', [0, 1, 10, 100, 0.5])
 def test_validate_number_pozitive(number):
-    variable_name = "test_variable"
+    variable_name = 'test_variable'
 
     # Замінюємо ut.inp_variable на функцію-заглушку, що завжди повертає number
     def inp_variable_mock(variable_name, message):
@@ -73,12 +73,12 @@ def test_validate_number_pozitive(number):
     result = validate_number(variable_name)
 
     # Перевіряємо, чи результат співпадає з очікуваним значенням
-    assert result == number, f"Expected: {number}, Actual: {result}"
+    assert result == number, f'Expected: {number}, Actual: {result}'
 
 
-@pytest.mark.parametrize("number", [-1, -10, -100, -0.5, -1.5, -10.2, -100.9])
+@pytest.mark.parametrize('number', [-1, -10, -100, -0.5, -1.5, -10.2, -100.9])
 def test_validate_number_invalid(number):
-    variable_name = "test_variable"
+    variable_name = 'test_variable'
 
     # Замінюємо ut.inp_variable на функцію-заглушку, що завжди повертає number
     def inp_variable_mock(variable_name, message):
@@ -89,7 +89,7 @@ def test_validate_number_invalid(number):
     result = validate_number(variable_name)
 
     # Перевіряємо, чи функція повертає None для недопустимих чисел
-    assert result is None, f"Expected: None, Actual: {result}"
+    assert result is None, f'Expected: None, Actual: {result}'
 
 
 
