@@ -1,9 +1,9 @@
 import math
 import pytest
 
-from task5.task_5_1 import series_sum
-from task5.task_5_2 import sum_stash_number
-from task5.task_5_3 import validate_number, heron_square_root
+from task_5.task_5_1 import series_sum
+from task_5.task_5_2 import sum_stash_number
+from task_5.task_5_3 import validate_number, heron_square_root
 
 import utils as ut
 
