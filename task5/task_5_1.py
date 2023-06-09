@@ -11,7 +11,7 @@ import utils as ut
 def series_sum(n_iter, eps):
     a_n_pred = m.exp(n_iter) * (100 ** (-n_iter ** 2))
     sum_a = 0
-    iter_n =1
+    iter_n = 1
     print(sum_a, n_iter)
     while True:
         iter_n += 1
@@ -21,7 +21,6 @@ def series_sum(n_iter, eps):
         if abs(a_n_pred - a_n) <= eps:
             return sum_a, iter_n
         a_n_pred = a_n
-
 
 
 if __name__ == '__main__':
