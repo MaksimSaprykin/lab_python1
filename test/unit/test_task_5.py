@@ -1,9 +1,10 @@
 import math
+import pytest
+
 from task5.task_5_1 import series_sum
 from task5.task_5_2 import sum_stash_number
 from task5.task_5_3 import validate_number, heron_square_root
 
-import pytest
 import utils as ut
 
 
@@ -23,14 +24,20 @@ def test_series_sum_good(input_param_n_iter, expected_eps, expected_n_iter):
     assert math.isclose(actual_sum, expected_sum, rel_tol=expected_eps)
     assert actual_n_iter == expected_n_iter
 
+
 # task5_2
-@pytest.mark.parametrize('input_number, expected_count_number', [(0, 1), (1, 1), (20, 2), (111, 3), (-111.3, 3)])
+@pytest.mark.parametrize('input_number, expected_count_number', [(0, 1),
+                                                                 (1, 1),
+                                                                 (20, 2),
+                                                                 (111, 3),
+                                                                 (-111.3, 3)])
 def test_sum_stash_number_good(input_number, expected_count_number):
     # Отримані значення
     actual_count_number = sum_stash_number(input_number)
 
     # Перевірка
     assert actual_count_number == expected_count_number
+
 
 @pytest.mark.parametrize('input_number, expected_count_number', [('123', TypeError)])
 def test_sum_stash_number_error(input_number, expected_count_number):
@@ -48,7 +55,6 @@ def test_heron_square_root_good(input_number, expected_rezult):
     assert pytest.approx(actual_rezult, 10 ** -3) == expected_rezult
 
 
-
 # @pytest.mark.parametrize('input_number', [-9, -25])
 # def test_heron_square_root_negative(input_number):
 #     with pytest.raises(ValueError):
@@ -60,14 +66,17 @@ def test_heron_square_root_error(input_number, expected_rezult):
     with pytest.raises(expected_rezult):
         heron_square_root(input_number)
 
+
 # тест для коректних значень
 @pytest.mark.parametrize('number', [0, 1, 10, 100, 0.5])
+# pylint: disable=unused-argument
 def test_validate_number_pozitive(number):
     variable_name = 'test_variable'
 
     # Замінюємо ut.inp_variable на функцію-заглушку, що завжди повертає number
     def inp_variable_mock(variable_name, message):
         return number
+
     ut.inp_variable = inp_variable_mock
 
     # Викликаємо функцію validate_number
@@ -91,6 +100,3 @@ def test_validate_number_pozitive(number):
 #
 #     # Перевіряємо, чи функція повертає None для недопустимих чисел
 #     assert result is None, f'Expected: None, Actual: {result}'
-
-
-
