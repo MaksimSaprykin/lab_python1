@@ -30,6 +30,7 @@ if __name__ == '__main__':
     TEMPLATE = 'Input {} '
     ut.print_info(TASK_NUMBER)
 
-    number = validate_number('a')
+    #number = validate_number('a')
+    number = input()
     result = heron_square_root(number)
     print("Квадратний корінь:", result)
